@@ -1,19 +1,20 @@
 function actionPetButton(){// creo la funcion
-    let inputHIipodoge=document.getElementById("Hipodoge")
+    let inputHipodoge=document.getElementById("Hipodoge")
     let inputCapipepo=document.getElementById("Capipepo")
     let inputRatigueya=document.getElementById("Ratigueya")
     let inputLangostelvis=document.getElementById("Langostelvis")
     let inputPydos=document.getElementById("Pydos")
-    if(inputHIipodoge.checked){// con el getElementById capturo un id de mi documento html y lo comparo, si es asi funcionara alguna de las condicionales 
-        alert("Has seleccionado a hipodoge")
+    let spanMascotaPlayer=document.getElementById("Pet-Player")
+    if(inputHipodoge.checked){// con el getElementById capturo un id de mi documento html y lo comparo, si es asi funcionara alguna de las condicionales 
+        spanMascotaPlayer.innerHTML="Hipodoge"
     }else if (inputCapipepo.checked){
-        alert("Has seleccionado a Capipepo")
+        spanMascotaPlayer.innerHTML="Capipepo"
     }else if(inputRatigueya.checked){
-        alert("Has seleccionado a Ratigueya")
+        spanMascotaPlayer.innerHTML="Ratigueya"
     }else if(inputLangostelvis.checked){
-        alert("Has seleccionado a Langostelvis")
+        spanMascotaPlayer.innerHTML="Langostelvis"
     }else if(inputPydos.checked){
-        alert("Has seleccionado a Pydos")
+        spanMascotaPlayer.innerHTML="Pydos"
     }else{
         alert("Debes seleccionar un Mokepon")
     }
