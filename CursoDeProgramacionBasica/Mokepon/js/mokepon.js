@@ -1,14 +1,21 @@
 function actionPetButton(){// creo la funcion
-    if(document.getElementById("Hipodoge")){// con el getElementById capturo un id de mi documento html y lo comparo, si es asi funcionara alguna de las condicionales
-        alert("Has seleccionado a hipoge")
-    }else if (document.getElementById("Capipepo")){
+    let inputHIipodoge=document.getElementById("Hipodoge")
+    let inputCapipepo=document.getElementById("Capipepo")
+    let inputRatigueya=document.getElementById("Ratigueya")
+    let inputLangostelvis=document.getElementById("Langostelvis")
+    let inputPydos=document.getElementById("Pydos")
+    if(inputHIipodoge.checked){// con el getElementById capturo un id de mi documento html y lo comparo, si es asi funcionara alguna de las condicionales 
+        alert("Has seleccionado a hipodoge")
+    }else if (inputCapipepo.checked){
         alert("Has seleccionado a Capipepo")
-    }else if(document.getElementById("Ratigueya")){
+    }else if(inputRatigueya.checked){
         alert("Has seleccionado a Ratigueya")
-    }else if(document.getElementById("Langostelvis")){
+    }else if(inputLangostelvis.checked){
         alert("Has seleccionado a Langostelvis")
-    }else if(document.getElementById("Pydos")){
+    }else if(inputPydos.checked){
         alert("Has seleccionado a Pydos")
+    }else{
+        alert("Debes seleccionar un Mokepon")
     }
 }
 function startGame(){
