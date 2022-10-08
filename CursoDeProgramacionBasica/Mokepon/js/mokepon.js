@@ -40,6 +40,23 @@ function petEnemi(){
     }
 
 }
+function randomAttackEnemi(){
+    let spanAttackEnemi=document.getElementById("Attack-Enemi")
+    let selectAttack=randomAttackAndPet(1,3)
+    if(selectAttack==1){
+        spanAttackEnemi.innerHTML="Fire"
+        attackEnemi="Fire"
+    }else if(selectAttack==2){
+        spanAttackEnemi.innerHTML="Water"
+        attackEnemi="Water"
+    }else if(selectPet==3){
+        spanAttackEnemi.innerHTML="Earht"
+        attackEnemi="Earht"
+    }
+}
+
+
+
 function randomAttackAndPet(min,max){
     return Math.floor(Math.random()*(max-min+1)+min)
 }
@@ -47,14 +64,17 @@ function randomAttackAndPet(min,max){
 function attackFire(){
     attackPlayer="Fire"
     alert(attackPlayer)
+    randomAttackEnemi()
 }
 function attackWater(){
     attackPlayer="Water"
     alert(attackPlayer)
+    randomAttackEnemi()
 }
 function attackEarth(){
     attackPlayer="Earth"
     alert(attackPlayer)
+    randomAttackEnemi()
 }
 function CombinationAttackFireAndWater(){
     attackFire
@@ -67,9 +87,9 @@ function combinationAttackEarhtAndFire(){
 function starGame(){
     let StarButton=document.getElementById("button-pet")
     StarButton.addEventListener("click",selectPet)
-    let buttonFire=document.getElementById("button-fire")
-    let buttonWater=document.getElementById("button-water")
-    let buttonEarth=document.getElementById("button-earth")
+    let buttonFire=document.getElementById("Attack-Fire")
+    let buttonWater=document.getElementById("Attack-Water")
+    let buttonEarth=document.getElementById("Attack-Earth")
     buttonFire.addEventListener("click",attackFire)
     buttonWater.addEventListener("click",attackWater)
     buttonEarth.addEventListener("click",attackEarth)
