@@ -1,5 +1,8 @@
 let attackPlayer
 let attackEnemi
+let desicionWin
+let livesPlayer=3
+let livesEnemi=3
 
 function selectPet(){
     let petSelectionHipodoge=document.getElementById("Hipodoge")
@@ -40,19 +43,57 @@ function petEnemi(){
     }
 
 }
+
+function comparationAttacks(){
+    let spanLivesEnemi=document.getElementById("lives-enemi")
+    let spanLivesPlayer=document.getElementById("lives-player")
+    if(attackPlayer==attackEnemi){
+        desicionWin="Esto es un empate"
+    }else if (attackPlayer=="Water"&& attackEnemi=="Fire"){
+        desicionWin="Felicitaciones ganastes"
+        livesEnemi=livesEnemi-1
+        spanLivesEnemi.innerHTML=livesEnemi
+    }else if(attackPlayer=="Fire"&& attackEnemi=="Water"){
+        desicionWin="Losiento perdistes"
+        livesPlayer=livesPlayer-1
+        spanLivesPlayer.innerHTML=livesPlayer
+    }else if(attackPlayer=="Fire"&& attackEnemi=="Earth"){
+        desicionWin="Felicitaciones ganastes"
+        livesEnemi=livesEnemi-1
+        spanLivesEnemi.innerHTML=livesEnemi
+    }else if(attackPlayer=="Earth"&& attackEnemi=="Fire"){
+        desicionWin="Losiento perdistes"
+        livesPlayer=livesPlayer-1
+        spanLivesPlayer.innerHTML=livesPlayer
+    }else if(attackPlayer=="Earth"&& attackEnemi=="Water"){
+        desicionWin="Felicitaciones ganastes"
+        livesEnemi=livesEnemi-1
+        spanLivesEnemi.innerHTML=livesEnemi
+    }else if(attackPlayer=="Water"&&attackEnemi=="Earth"){
+        desicionWin="Losiento perdistes"
+        livesPlayer=livesPlayer-1
+        spanLivesPlayer.innerHTML=livesPlayer
+    }
+}
+
 function randomAttackEnemi(){
     let spanAttackEnemi=document.getElementById("Attack-Enemi")
     let selectAttack=randomAttackAndPet(1,3)
     if(selectAttack==1){
-        spanAttackEnemi.innerHTML="Fire"
         attackEnemi="Fire"
     }else if(selectAttack==2){
-        spanAttackEnemi.innerHTML="Water"
         attackEnemi="Water"
     }else if(selectPet==3){
-        spanAttackEnemi.innerHTML="Earht"
         attackEnemi="Earht"
     }
+    comparationAttacks()
+    createMessage()
+}
+function createMessage(){
+    let sectionMessage=document.getElementById("mensaje")
+    let paragraph=document.createElement("p")
+    paragraph.innerHTML="Tu moscota ataco con " +attackPlayer+" la mascota enemigo ataco con "+attackEnemi+" La desicion es "+desicionWin
+    sectionMessage.appendChild(paragraph)
 }
 
 
@@ -63,17 +104,14 @@ function randomAttackAndPet(min,max){
 
 function attackFire(){
     attackPlayer="Fire"
-    alert(attackPlayer)
     randomAttackEnemi()
 }
 function attackWater(){
     attackPlayer="Water"
-    alert(attackPlayer)
     randomAttackEnemi()
 }
 function attackEarth(){
     attackPlayer="Earth"
-    alert(attackPlayer)
     randomAttackEnemi()
 }
 function CombinationAttackFireAndWater(){
