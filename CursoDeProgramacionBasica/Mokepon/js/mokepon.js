@@ -74,6 +74,17 @@ function comparationAttacks(){
         livesPlayer=livesPlayer-1
         spanLivesPlayer.innerHTML=livesPlayer
     }
+    endGame()
+}
+function endGame(){
+    if(livesPlayer>1 &&livesEnemi==0){
+    alert("Felicitaciones Ganastes esta guerra")
+    }else if(livesPlayer==0){
+        alert("Perdistes La guerra")
+    }
+    if(livesEnemi==0 || livesPlayer==0){
+        resetGame()
+    }
 }
 
 function randomAttackEnemi(){
@@ -122,6 +133,7 @@ function combinationAttackEarhtAndFire(){
     attackEarth
     attackFire
 }
+
 function starGame(){
     let StarButton=document.getElementById("button-pet")
     StarButton.addEventListener("click",selectPet)
@@ -131,8 +143,12 @@ function starGame(){
     buttonFire.addEventListener("click",attackFire)
     buttonWater.addEventListener("click",attackWater)
     buttonEarth.addEventListener("click",attackEarth)
+    let buttonReset=document.getElementById("button-reset")
+    buttonReset.addEventListener("click",resetGame)
 
 }
-
+function resetGame(){
+    location.reload()
+}
 window.addEventListener("load",starGame)
 
