@@ -4,3 +4,8 @@
     height: 50px;
     background-color: #FA8072   ;
 }
+
+#seleccionar-mascota{
+    display: flex;
+    flex-direction: column;
+}
